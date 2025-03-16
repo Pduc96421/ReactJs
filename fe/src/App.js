@@ -1,6 +1,8 @@
 import { memo } from "react";
 import { useState } from "react";
 import Content from "./Content";
+import UseRef from "./useRef";
+
 
 const courses = [
   {
@@ -19,6 +21,8 @@ const courses = [
 
 const App = () => {
   const [checked, setChecked] = useState([]);
+  const [show, setShow] = useState(false);
+  const [showUseRef, setShowUseRef] = useState(false);
 
   const handleCheck = (id) => {
     setChecked(prev => {
@@ -36,7 +40,6 @@ const App = () => {
     console.log({ id: checked });
   }
 
-  const [show, setShow] = useState(false);
 
   return (
     <div style={{ padding: 32 }}>    
@@ -54,9 +57,15 @@ const App = () => {
       </div>
 
       <div style={{ padding: 32}}>
-        <button onClick={() => setShow(!show)}>Toggle</button>
+        <button onClick={() => setShow(!show)}>useEffect</button>
         {show && <Content />}
       </div>
+
+      <div style={{ padding: 32}}>
+        <button onClick={() => setShowUseRef(!showUseRef)}>useRef</button>
+        {showUseRef && <UseRef />}
+      </div>
+
     </div>
   );
 };
