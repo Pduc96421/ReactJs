@@ -50,9 +50,8 @@ const App = () => {
             /> {course.name}
           </div>
         ))}
-      </div>
-
       <button onClick={handleSubmit}>Register</button>
+      </div>
 
       <div style={{ padding: 32}}>
         <button onClick={() => setShow(!show)}>Toggle</button>
