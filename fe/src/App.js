@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { useState } from "react";
-import Content from "./Content";
-import UseRef from "./useRef";
-import UseMemo from "./useMemo";
+import Content from "./components/Content";
+import UseRef from "./components/useRef";
+import UseMemo from "./components/useMemo";
 
 
 const courses = [
@@ -44,7 +44,7 @@ const App = () => {
 
 
   return (
-    <div style={{ padding: 32 }}>    
+    <div style={{ padding: 10}}>    
       <div>
         {courses.map(course => (
           <div key={course.id}>
@@ -58,17 +58,17 @@ const App = () => {
       <button onClick={handleSubmit}>Register</button>
       </div>
 
-      <div style={{ padding: 32}}>
+      <div style={{ padding: 10}}>
         <button onClick={() => setShow(!show)}>useEffect</button>
         {show && <Content />}
       </div>
 
-      <div style={{ padding: 32}}>
+      <div style={{ padding: 10}}>
         <button onClick={() => setShowUseRef(!showUseRef)}>useRef</button>
         {showUseRef && <UseRef />}
       </div>
 
-      <div style={{ padding: 32}}>
+      <div style={{ padding: 10}}>
         <button onClick={() => setShowUseMemo(!showUseMemo)}>UseMemo</button>
         {showUseMemo && <UseMemo />}
       </div>
