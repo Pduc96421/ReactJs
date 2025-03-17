@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { ThemeProvider } from './components/context/themeContext';
+
 
 // fake commnet
 function emitComment(id) {
@@ -18,6 +20,8 @@ emitComment(2);
 emitComment(3);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render( <
-  App / >
+root.render(
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>
 );

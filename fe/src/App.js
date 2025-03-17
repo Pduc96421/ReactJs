@@ -4,6 +4,7 @@ import Content from "./components/Content";
 import UseRef from "./components/useRef";
 import UseMemo from "./components/useMemo";
 import UseReducer from "./components/Todo/useReducer";
+import UseContext from "./components/context/useContext";
 
 
 const courses = [
@@ -27,6 +28,7 @@ const App = () => {
   const [showUseRef, setShowUseRef] = useState(false);
   const [showUseMemo, setShowUseMemo] = useState(false);
   const [showUseReducer, setShowUseReducer] = useState(false);
+  const [showUseContext, setShowUseContext] = useState(false);
 
   const handleCheck = (id) => {
     setChecked(prev => {
@@ -78,6 +80,11 @@ const App = () => {
       <div style={{ padding: 10}}>
         <button onClick={() => setShowUseReducer(!showUseReducer)}>UseReducer</button>
         {showUseReducer && <UseReducer />}
+      </div>
+
+      <div style={{ padding: 10}}>
+        <button onClick={() => setShowUseContext(!showUseContext)}>UseContext</button>
+        {showUseContext && <UseContext />}
       </div>
 
     </div>
