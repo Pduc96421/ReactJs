@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ThemeProvider } from './components/context/themeContext';
-
+import { StoreProvider } from './store';
 
 // fake commnet
 function emitComment(id) {
@@ -21,7 +21,9 @@ emitComment(3);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
+  <StoreProvider>
+    <ThemeProvider>
+          <App />
+    </ThemeProvider>
+  </StoreProvider>
 );
