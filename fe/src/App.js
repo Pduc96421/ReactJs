@@ -3,6 +3,7 @@ import { useState } from "react";
 import Content from "./components/Content";
 import UseRef from "./components/useRef";
 import UseMemo from "./components/useMemo";
+import UseReducer from "./components/Todo/useReducer";
 
 
 const courses = [
@@ -25,6 +26,7 @@ const App = () => {
   const [show, setShow] = useState(false);
   const [showUseRef, setShowUseRef] = useState(false);
   const [showUseMemo, setShowUseMemo] = useState(false);
+  const [showUseReducer, setShowUseReducer] = useState(false);
 
   const handleCheck = (id) => {
     setChecked(prev => {
@@ -71,6 +73,11 @@ const App = () => {
       <div style={{ padding: 10}}>
         <button onClick={() => setShowUseMemo(!showUseMemo)}>UseMemo</button>
         {showUseMemo && <UseMemo />}
+      </div>
+
+      <div style={{ padding: 10}}>
+        <button onClick={() => setShowUseReducer(!showUseReducer)}>UseReducer</button>
+        {showUseReducer && <UseReducer />}
       </div>
 
     </div>
