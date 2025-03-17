@@ -4,6 +4,7 @@ import UseRef from "./components/useRef";
 import UseMemo from "./components/useMemo";
 import UseReducer from "./components/Todo/useReducer";
 import UseContext from "./components/context/useContext";
+import UseImperativeHandle from "./components/useImperativeHandle/useImpreativeHandle";
 
 import { useStore, actions } from './store'
 
@@ -29,6 +30,7 @@ const App = () => {
   const [showUseMemo, setShowUseMemo] = useState(false);
   const [showUseReducer, setShowUseReducer] = useState(false);
   const [showUseContext, setShowUseContext] = useState(false);
+  const [showUseImpreativeHandle, setShowUseImpreativeHandle] = useState(false);
 
   const handleCheck = (id) => {
     setChecked(prev => {
@@ -93,6 +95,11 @@ const App = () => {
         <div style={{ padding: 10}}>
           <button onClick={() => setShowUseContext(!showUseContext)}>UseContext</button>
           {showUseContext && <UseContext />}
+        </div>
+
+        <div style={{ padding: 10}}>
+          <button onClick={() => setShowUseImpreativeHandle(!showUseImpreativeHandle)}>UseImpreativeHandle</button>
+          {showUseImpreativeHandle && <UseImperativeHandle />}
         </div>
 
       </div>
