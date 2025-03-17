@@ -5,6 +5,7 @@ import UseMemo from "./components/useMemo";
 import UseReducer from "./components/Todo/useReducer";
 import UseContext from "./components/context/useContext";
 import UseImperativeHandle from "./components/useImperativeHandle/useImpreativeHandle";
+import Router from "./components/router/Router";
 
 import { useStore, actions } from './store'
 
@@ -122,6 +123,9 @@ const App = () => {
           ))}
         </ul>
       </div>
+
+      <Router />
+
     </>
   );
 };
